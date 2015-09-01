@@ -26,7 +26,7 @@ public class JedisTest {
 
 		jedis.lpush("s1", "sssd3");
 		System.out.println(jedis.lrange("s1", 0, -1));*/
-		
+		//
 		System.out.println(getRandomCode(6));
 		
 		
