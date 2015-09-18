@@ -1,5 +1,9 @@
 package test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
 import com.shenny.test.controller.AopTest;
@@ -14,10 +18,11 @@ public class JedisTest {
 
 	/**
 	 * @param args
+	 * @throws UnsupportedEncodingException 
 	 */
 	
 	@AopTest(action = "", name = "")
-	public static void main(String[] args) {
+	public static void main(String[] args) throws UnsupportedEncodingException {
 		// TODO Auto-generated method stub
 		/*Jedis jedis=new Jedis("127.0.0.1");
 		jedis.set("s","ssss");
@@ -29,6 +34,16 @@ public class JedisTest {
 		//
 		System.out.println(getRandomCode(6));
 		
+		ByteArrayOutputStream out=new ByteArrayOutputStream();
+		try {
+			ObjectOutputStream ops=new ObjectOutputStream(out);
+			ops.writeObject(new String[]{"s","dadw"});
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		byte[] bytes=out.toByteArray();
+		System.out.println(new String(out.toByteArray()));
 		
 
 	}
