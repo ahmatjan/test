@@ -15,6 +15,7 @@ public class DemoController {
 
 	@RequestMapping("index1")
 	public String index() {
+		
 		return "index";
 	}
 }
