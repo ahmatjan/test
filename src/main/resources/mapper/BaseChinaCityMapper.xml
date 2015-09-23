@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shenny.test.dao.IBaseChinaCityDao">
+<resultMap type="com.shenny.test.model.BaseChinaCity" id="baseResultMap">
+	<id column="id" property="id" jdbcType="INTEGER"/>
+	<result column="name" property="name" jdbcType="VARCHAR"/>
+	<result column="province_id" property="provinceId" jdbcType="INTEGER"/>
+	<result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+	<result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+</resultMap>
+<!-- 	<select id="listAllCity" resultMap="baseResultMap" >
+		select id,name,province_id,create_time,update_time
+		from base_china_city
+		limit 100
+	</select> -->
+</mapper>
