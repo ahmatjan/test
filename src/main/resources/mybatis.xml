@@ -6,5 +6,7 @@
 	<mappers>
 		<mapper resource="mapper/BaseChinaCityMapper.xml" />
 		<mapper resource="mapper/EcSaleImgMapper.xml" />
+		<mapper resource="mapper/PostDetailMapper.xml" />
+		<mapper resource="mapper/GoodsMapper.xml" />
 	</mappers>
 </configuration>

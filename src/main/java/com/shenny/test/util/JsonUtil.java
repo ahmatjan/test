@@ -1,4 +1,4 @@
-package test;
+package com.shenny.test.util;
 
 
 import java.io.IOException;

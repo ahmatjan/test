@@ -13,5 +13,11 @@ import com.shenny.test.model.BaseChinaCity;
 public interface IUserService {
 	
 	public List<BaseChinaCity> listAllCity();
+	
+	public long addData();
+	
+	public void syncTest();
+	
+	public boolean buy();
 
 }

@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.infosys.hic</groupId>
+	<groupId>com.shenny</groupId>
 	<artifactId>test</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
@@ -13,13 +13,15 @@
 		</snapshots> </repository> </repositories> -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<springversion>3.1.1.RELEASE</springversion>
-		<junitversion>3.8.1</junitversion>
+		<springversion>3.2.4.RELEASE</springversion>
+		<commons-lang>2.6</commons-lang>
+		<junitversion>4.10</junitversion>
 		<!-- mybatis版本号 -->
 		<mybatis.version>3.2.4</mybatis.version>
 		<!-- log4j日志文件管理包版本 -->
 		<slf4j.version>1.6.6</slf4j.version>
 		<log4j.version>1.2.9</log4j.version>
+		<lucene.version>4.6.0</lucene.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -28,6 +30,11 @@
 			<version>2.0.0</version>
 			<type>jar</type>
 			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>${commons-lang}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
@@ -57,13 +64,7 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-asm</artifactId>
-			<version>${springversion}</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
@@ -114,6 +115,11 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jms</artifactId>
 			<version>${springversion}</version>
@@ -161,6 +167,12 @@
 			<version>${springversion}</version>
 			<type>jar</type>
 			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${springversion}</version>
 		</dependency>
 
 		<dependency>
@@ -232,6 +244,84 @@
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jettison</groupId>
+			<artifactId>jettison</artifactId>
+			<version>1.3.7</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId> org.apache.lucene</groupId>
+			<artifactId> lucene-core</artifactId>
+			<version> ${lucene.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId> org.apache.lucene</groupId>
+			<artifactId> lucene-queryparser</artifactId>
+			<version> ${lucene.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-analyzers-common</artifactId>
+			<version>${lucene.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.paoding</groupId>
+			<artifactId>paoding-analysis</artifactId>
+			<version>2.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.shenny</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/mail-1.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1-beta-6</version>
 		</dependency>
 	</dependencies>
 	<build>

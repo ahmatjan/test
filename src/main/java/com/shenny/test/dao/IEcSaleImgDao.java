@@ -15,5 +15,7 @@ public interface IEcSaleImgDao {
 	public List<EcSaleImg> listAllImg();
 	
 	public int add(EcSaleImg img);
+	
+	public int insert(String str);
 
 }

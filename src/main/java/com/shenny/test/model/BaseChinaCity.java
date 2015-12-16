@@ -79,6 +79,17 @@ public class BaseChinaCity implements Serializable {
 		this.updateTime = updateTime;
 	}
 	
+	@Override
+	public boolean equals(Object obj){
+		if(obj==null)
+			return false;
+		if(!(obj instanceof BaseChinaCity))
+		return false;
+		BaseChinaCity base=(BaseChinaCity)obj;
+		if(base.id!=this.id)
+			return true;
+		return true;
+	}
 	
 
 }

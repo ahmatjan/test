@@ -2,9 +2,12 @@ package com.shenny.test.controller;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
-import java.util.UUID;
+
+import org.codehaus.jettison.json.JSONException;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+
+import com.shenny.test.util.JsoupUtil;
 
 /**   
 * @ClassName: Task  
@@ -16,23 +19,35 @@ import org.springframework.stereotype.Component;
 @Component
 public class Task {
 	
-	//@Scheduled(cron="0/2 * * * * ?")
+	//@Scheduled(cron="0 0/30 * * * ?")
 	public void testJob1()
 	{
-		System.out.println(UUID.randomUUID().toString()+"\t"+new Date().toString());
+		//System.out.println(UUID.randomUUID().toString()+"\t"+new Date().toString());
 		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
+			JsoupUtil.getJson("http://news.baidu.com/n?m=rddata&v=hot_word&type=0&date=");
+		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		JsoupUtil.getWebPage("http://news.baidu.com/");
 	}
 	static Integer i;
 	public static void main(String[] agr) throws UnsupportedEncodingException
 	{
 		/*ClassPathXmlApplicationContext ctx=new ClassPathXmlApplicationContext("/applicationContext.xml");
 		ctx.getBean("task");*/
-		System.out.println("日".getBytes().length);
+		System.out.println("ss日".getBytes().length);
+	}
+	
+	//@Scheduled(cron="0/5 * * * * ?")
+	public void expressWarning(){
+		JsoupUtil.express();
+	}
+	
+	@Scheduled(fixedRate=5000)
+	public void testJob2(){
+		System.out.println(new Date());
 	}
 
 }
